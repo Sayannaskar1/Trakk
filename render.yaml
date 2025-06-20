@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: realtime-tracker
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: node script.js   # ⬅️ change to your main file if it's different
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
